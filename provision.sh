@@ -2,8 +2,7 @@
 
 install_chruby() {
   if command_exists 'chruby'; then
-    CHRUBY_FILE='chruby-0.3.8.tar.gz'
-    TAR_PATH="/root/$CHRUBY_FILE"
+    TAR_PATH="/root/chruby-0.3.8.tar.gz"
 
     sudo wget -O $TAR_PATH https://github.com/postmodern/chruby/archive/v0.3.8.tar.gz
     sudo tar -xzvf $TAR_PATH -C /root/
