@@ -1,6 +1,6 @@
 require "spec_helper"
 
-require "game_of_life"
+require "game_of_life/game"
 
 describe GameOfLife::Game do
   it "creates grid of specified size" do
