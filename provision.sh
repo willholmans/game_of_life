@@ -1,25 +1,15 @@
 #!/bin/bash
 
-install_chruby() {
-  if command_exists 'chruby'; then
-    TAR_PATH="/root/chruby-0.3.8.tar.gz"
-
-    sudo wget -O $TAR_PATH https://github.com/postmodern/chruby/archive/v0.3.8.tar.gz
-    sudo tar -xzvf $TAR_PATH -C /root/
-    sudo -s 'cd /root/chruby-0.3.8/; make install'
-    sudo make install
-  else
-    echo "chruby already installed."
-  fi
-}
-
-command_exists() {
-  command $1 &> /dev/null
+function install_ruby() {
+  sudo apt-get install -y python-software-properties
+  sudo apt-add-repository -y ppa:brightbox/ruby-ng
+  sudo apt-get update
+  sudo apt-get install -y ruby2.1
 }
 
 sudo apt-get update
 sudo apt-get install -y git vim build-essential
 
-install_chruby
+install_ruby
 
 bundle install
