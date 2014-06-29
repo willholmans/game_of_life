@@ -5,7 +5,7 @@ describe "integration" do
     width, height = 10, 5
     live_cells = [ [0, 1], [2, 2], [3, 0] ]
 
-    game = GameOfLife.new(width, height, live_cells)
+    game = GameOfLife::Game.new(width, height, live_cells)
     grid = game.grid
 
     expect(grid[0, 1]).to be_truthy
